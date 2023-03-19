@@ -1,0 +1,375 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container-page{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#header-page{
+    background-color: #FF4A4A;
+}
+.header-top-items{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0px;
+    font-size: 16px;
+    color: #fff;
+}
+.header-top--item{
+    padding: 0px 10px;
+    color: #fff;
+    text-decoration: none;
+}
+.header-top--item a{
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+}
+
+.header-top--item>a:hover{
+    background-color: #fff;
+    color: #FF4A4A;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.header-mid{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.search-page{
+    margin-left: 45px;
+}
+.search-text{
+    background: lightgray;
+    border: 1px solid #fff;
+    outline: none;
+    background: none;
+    color: black;
+    font-size: 16px;
+    background-color: #fff;
+    padding: 10px 10px;
+    border-radius: 10px;
+    width: 500px;  
+    
+}
+.search-btn{
+    background-color: #fff;
+    border: none;
+    padding: 10px 10px;
+    cursor: pointer;           
+    font-size: 16px;
+    background-color: #fff;
+}
+.search-box{
+    display: flex;
+}
+
+button[type="submit"] {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-left: 8px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    
+  }
+.shopping-cart-page{
+    color: #fff;
+}
+
+.shopping-cart:hover{
+    border: 1px solid #fff;
+    background-color: #fff;
+    color: #FF4A4A;
+} 
+.shopping-cart{
+    font-size: 30px;
+    padding: 10px 10px;
+    position: fixed;
+    top: 20px;
+    right: 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    color: #FF4A4A;
+    border-radius: 10%;
+}
+
+.header-bot #nav-items{
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    list-style: none;
+    padding: 10px 0px;
+}
+.nav-item a{
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+}
+.nav-item>a:hover{
+    background-color: #fff;
+    color: #FF4A4A;
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+
+
+
+/* main */
+
+#main{
+    /* margin-top: 20px; */
+}
+.banner-left{
+    position: relative;
+}
+/* .button{
+    position: absolute;
+    top: 50%;
+    color: #000;
+    font-size: 30px;
+    transform: translateY(-50%);
+    border: none;
+    cursor: pointer;
+}
+.prev{
+   left: 10px;
+}
+.next{
+    right: 10px;
+} */
+
+/* banner trượt */
+.slideshow-container {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+  }
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  .slide:first-child {
+    opacity: 1;
+  }
+  .slide.active {
+    opacity: 1;
+  }
+
+.background-banner{
+    background-image: url('../images/trangchu/background-banner.png');
+    background-size: cover;
+}
+.banner-page{
+    display: flex;
+    padding: 33px 0px;
+}
+.banner-left{
+    width: 70%;
+    margin-right: 5px;
+   
+}
+.banner-left img{
+    width: 100%;
+    border: 1px solid #fff;
+    border-radius: 10px;
+}
+
+
+.banner-right{
+    width: 30%;
+    margin-left: 5px;
+}
+
+.right-bottom{
+    margin-top: 9px;
+}
+.right-top img{
+    width: 100%;
+    height: 100px;
+    border-radius: 5px;
+}
+
+.right-bottom img{
+    width: 100%;
+    height: 100px;
+    border-radius: 5px;
+}
+
+.heading-banner{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px 20px 20px;
+    font-size: 20px;
+}
+
+.span-item--banner{
+    color: #FF4A4A;
+}
+.heading-banner-item{
+    color: #54595F;
+}
+
+.banner-botttom-page img{
+    width: 100%;
+    margin-top: 10px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+}
+
+#products{
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 30px;
+}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px 8px;
+    font-size: 13px;
+}
+
+th img{
+    width: 100%;
+    display: top;
+    padding: 0px 30px;
+}
+
+th span{
+    width: 100%;
+}
+th:hover{
+    background-color: #FF4A4A;
+}
+.prodcut-name{
+    width: 100%;
+    display: list-item;
+    margin-top: 20px;
+    list-style: none;
+    color: #000;
+}
+th a{
+    text-decoration: none;
+}
+
+.heading3{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 10px 0px;
+}
+.heading3-item{
+    padding: 5px 0px;
+    color: blue;
+}
+
+.heading3-item:first-child{
+    color: red;
+    font-size: 30px; 
+}
+.submit-img{
+    text-align: center;
+    justify-content: center;
+}
+
+/* footer */
+
+#footer-page{
+    justify-content: space-between;
+    background-color: #ff4a4a;
+    margin-top: 40px;
+    color: #fff;
+    position: relative;
+}
+
+#ft-top-page{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0px;
+    color: white;
+    border-bottom: 1px solid #fff;
+}
+#ft-top-page p{
+    width: 40%;
+}
+#ft-top-page form{
+    width: 40%;
+}
+#ft-top-page input{
+    border: none;
+    width: 330px;
+    height: 40px;
+    border-radius: 10px;
+}
+/* ft-mid */
+.ft-mid-page{
+    display: flex;
+    margin-top: 20px;
+}
+
+.ft-mid-page a{
+    color: #0b5ba5;
+    text-decoration: none;
+}
+.icon-contact{
+    margin-top: 0px;
+}
+
+.icon-contact a{
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+}
+
+
+#ft-right a {
+    display: block;
+    padding: 5px 0px;
+}   
+.submit-text-contact{
+    padding: 10px 20px;
+    font-size: 15px;
+}
+#ft-bottom{
+    border-top: 1px solid #fff;
+    margin: 20px 0px 0px 0px;
+    padding: 20px 0px 20px 0px;
+    text-align: center;
+}
+.top-page-btn{
+    background-color: #fff;
+    color: #ff4a4a;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    display: block;
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    text-align: center;
+    align-items: center;
+    
+}
+.top-page-icon{   
+   padding: 10px 0px 0px 0px
+}
+.top-page-btn:hover{
+    
+    background-color: #fff;
+    color: #FF4A4A;
+}

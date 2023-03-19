@@ -1,0 +1,110 @@
+/* Định dạng chung cho form */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+}
+
+/* Định dạng tiêu đề */
+.form h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-top: 0;
+}
+
+/* Định dạng các input và label */
+.form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+/* Định dạng nút submit */
+.form button[type="submit"] {
+  background-color: #ff4a4a;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  margin: 0px;
+}
+
+.form button[type="submit"]:hover {
+  background-color: #ff2a2a;
+}
+
+.container-header-user {
+  margin-top: 10px;
+}
+
+.checkbox-pass {
+  display: flex;
+}
+
+.pass-page {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.forget-pass a {
+  color: #ff4a4a;
+  align-items: center;
+}
+
+.check-left {
+  margin-right: 3px;
+}
+
+.sign-up-page {
+  margin-top: 10px;
+  font-size: 13px;
+  color: gray;
+}
+
+.sign-up-page a {
+  color: #ff4a4a;
+}
+
+.heading-login-page {
+  text-align: center;
+  font-size: 13px;
+  margin: 20px 0px 40px 0px;
+}
+
+.heading-login-page span {
+  color: #ff4a4a;
+}
+
+.form {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
