@@ -21,6 +21,25 @@
             $result = $this -> db -> select($query);
             return $result;
         }
-       
+
+        public function get_cartegory($cartegory_id){
+            $query = "SELECT * FROM tbl_cartegory WHERE cartegory_id = '$cartegory_id'";  
+            $result = $this -> db -> select($query);
+            return $result;
+        }
+
+        public function update_cartegory($cartgory_name, $cartegory_id){
+            $query = "UPDATE tbl_cartegory SET cartegory_name = '$cartgory_name' WHERE cartegory_id = '$cartegory_id'";
+            $result = $this -> db -> update($query);
+            header('Location: cartegorylist.php');
+            return $result;
+        }
+
+        public function delete_cartegory($cartegory_id){
+            $query = "DELETE FROM tbl_cartegory WHERE cartegory_id = '$cartegory_id'";
+            $result = $this -> db -> delete($query);
+            header('Location: cartegorylist.php');
+            return $result;
+        }
     }
 ?>
