@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #000;
+    outline: none;
+}
+
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+
+header{
+    text-align: center;
+    padding: 30px 0px;
+    border-bottom: 1px solid #000;
+}
+header>h1{
+    text-transform: uppercase;
+}
+
+.admin-content{
+    padding-top: 50px;
+    display: flex;
+}
+.content-left{
+    background-color: #dddddd;
+    width: 20%;
+    height: 100vh;
+    padding: 30px 0px 0px 12px;
+}
+.content-left > ul > li > a{
+    font-weight: bold;
+}
+
+.content-left ul li{
+    margin: 6px 0px;
+    padding: 6px 6px;
+}
+.content-left ul ul{
+    margin-left: 20px;
+}
+.content-left ul ul li:hover{
+    background-color: #ff4436;
+    padding: 6px 6px;
+    transition: all 0.5s ease;
+}
+.content-left ul ul li a:hover{
+    color: #fff;
+}
+
+
+
+/* content right */
+.content-right{
+    width: 80%;
+    padding: 30px 0px 0px 12px;
+}
+.content-cartegory-add input{
+    width: 200px;
+    height: 30px;
+    padding-left: 12px;
+    margin-top: 12px;
+}
+
+.content-cartegory-add button{
+    display: block;
+    margin-top: 10px;
+    height: 30px;
+    width: 100px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.33s ease;
+}
+
+.content-cartegory-add button:hover{
+    background-color: #ff4436;
+    color: #fff;
+}
+
+
+
+/*--------------------------------- cartegory list----------------- */
+
+.content-cartegory-list table{
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+.content-cartegory-list table{
+    border-collapse: collapse;
+}
+.content-cartegory-list table tr th, td{
+    border: 1px solid #000;
+}
