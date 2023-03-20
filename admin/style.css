@@ -83,7 +83,7 @@ header>h1{
 
 
 
-/*--------------------------------- cartegory list----------------- */
+/*----------------------cartegory list----------------- */
 
 .content-cartegory-list table{
     width: 100%;
@@ -96,3 +96,6 @@ header>h1{
 .content-cartegory-list table tr th, td{
     border: 1px solid #000;
 }
+
+/*--------------------- brand_add------------------*/
+
