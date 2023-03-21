@@ -66,23 +66,22 @@
     cursor: pointer;           
     font-size: 16px;
     background-color: #fff;
+    border-radius: 10px;
+    margin-left: 10px;
 }
 .search-box{
     display: flex;
 }
 
-button[type="submit"] {
+/* button[type="submit"] {
     padding: 8px 12px;
     border: none;
     border-radius: 4px;
     font-size: 16px;
     margin-left: 8px;
     cursor: pointer;
-  }
-  
-  button[type="submit"]:hover {
-    
-  }
+  } */
+
 .shopping-cart-page{
     color: #fff;
 }
@@ -127,9 +126,7 @@ button[type="submit"] {
 
 /* main */
 
-#main{
-    /* margin-top: 20px; */
-}
+
 .banner-left{
     position: relative;
 }
