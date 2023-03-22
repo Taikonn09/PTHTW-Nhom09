@@ -175,36 +175,20 @@
 
                         <div class="top-pay-right">
                             <label for="city">Quận/Huyện</label> <br>
-                            <select name="city" id="city" onchange="filterCity(this.value)">
-                                <option value="">-- Chọn quận/Huyện --</option>
-                                <option value="hanoi">ksdjkf</option>
-                                <option value="hcm">Hồ Chí Minh</option>
-                                <option value="danang">Đà Nẵng</option>
-                                <option value="haiduong">Hải Dương</option>
-                                <option value="quangnam">Quảng Nam</option>
-                                <option value="quangngai">Quảng Ngãi</option>
-                                <option value="thuathienhue">Thừa Thiên Huế</option>
-                            </select> <br>
+                            <input name="city" id="city" onchange="filterCity(this.value)" placeholder="VD: Quận 18...">
+                                
                         </div>
                     </div>
 
                     <div class="bottom-pay">
                         <div class="bottom-pay-left">
                             <label for="city">Xã/Phường</label> <br>
-                            <select name="city" id="city" onchange="filterCity(this.value)">
-                                <option value="">-- Chọn xã/Phường-</option>
-                                <option value="hanoi">Hà Nội</option>
-                                <option value="hcm">Hồ Chí Minh</option>
-                                <option value="danang">Đà Nẵng</option>
-                                <option value="haiduong">Hải Dương</option>
-                                <option value="quangnam">Quảng Nam</option>
-                                <option value="quangngai">Quảng Ngãi</option>
-                                <option value="thuathienhue">Thừa Thiên Huế</option>
-                            </select> <br>
+                            <input name="city" id="city" onchange="filterCity(this.value)" placeholder="VD: Xã 19...">
+                               
                         </div>
                         <div class="bottom-pay-right">
                             <label for="">Số nhà/Đường</label> <br>
-                            <input type="" name="" id="addrest" placeholder="Địa chỉ: VD: số 20 đường abc...">
+                            <input type="" name="" id="addrest" placeholder="VD: số 20 đường abc...">
                         </div>
                     </div>
                 </div>
@@ -217,9 +201,9 @@
                         <input style="margin-right: 5px;" type="checkbox" id="checkbox" onclick="oneclick()">Bấm vào đây
                     </label>
                 </p>
-                <p id="input" style="display:none;">
-                    <label for="inputText">Nhập vào địa chỉ của bạn</label>
-                    <input type="text" id="inputText" placeholder="VD: Cầu 21, đường A quẹo trái">
+                <p id="input" class="input-addrest" style="display:none;">
+                    <label style="margin-top: 10px;" for="inputText">Nhập vào địa chỉ của bạn</label>
+                    <input type="text" id="inputText" placeholder="VD: Sô 21, đường abc">
                 </p>
             </div>
 
@@ -322,5 +306,5 @@
         </div>
     </footer>
 </body>
-
+<script src="js/cart.js"></script>
 </html>

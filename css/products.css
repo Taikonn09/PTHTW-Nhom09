@@ -24,22 +24,19 @@
     width: 220px;
     height: 37px;
     padding: 5px 10px;
-    
 }
 
 .search-product button{
     background-color: #0170B9;
-    width: auto;
+    width: 30px;
     height: 37px;
+    border: none;
 }
 .search-product button:hover{
     background-color: black;
     color: #fff;
+    transition: all 0.3s ease-in-out;
 }
-
-
-
-
 
 
 /* content */
@@ -79,10 +76,28 @@
 }
 
     /* sidebar */
-.sidebar-list--products ul,li,a{
+.sidebar-list--products ul, li, a{
     list-style-type: none;
     color: rgb(12, 8, 252);
     text-decoration: none;
-    padding-top: 13px;
-    
+    margin-top: 20px;
+}
+
+/*-----------tài update----------*/
+.product-price, span{
+    color: #0170B9;
+}
+.sidebar-list--products ul li a{
+    padding: 10px 10px;
+    margin-top: 10px;
+    width: 100%;
+}
+.sidebar-list--products ul>li a:hover{
+    background-color: #000;
+    transition: all 0.3s ease-in-out;
+    color: #fff;
+}
+
+.header-top-items a{
+    margin: 0px;
 }

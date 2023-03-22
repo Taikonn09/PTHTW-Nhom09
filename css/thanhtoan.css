@@ -114,6 +114,13 @@ textarea{
   font-size: 15px;
 }
 
+.input-addrest{
+  margin-top: 10px;
+}
+#inputText{
+  width: 515px;
+  padding: 10px 10px;
+}
 
 /*right*/
 #right-pay-page{
