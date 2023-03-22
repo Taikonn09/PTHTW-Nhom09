@@ -1,4 +1,6 @@
 // Phí Ngọc Tài
+
+//---------------------banner trên page------------------------------------------------------------------
 var slideIndex = 0;
 var slides = document.getElementsByClassName("slide");
 
@@ -11,17 +13,32 @@ function showSlides() {
     slideIndex = 0;
   }
   slides[slideIndex].classList.add("active");
-  setTimeout(showSlides, 4000); // chuyển slide sau mỗi 5 giây
+  setTimeout(showSlides, 3500); // chuyển slide sau mỗi 3,5 giây
 }
 showSlides();
 
-button ontop
-$(document).ready(function(){
-  $(window).scroll(function(){
-    if($(this).scrollTop()){
-      $('#header-page').fadeIn();
-    }else{
-      $('#header-page').fadeOut();
-    }
-  });
+
+
+
+
+//---------------------------nút về đầu trang---------------------------------------------------------------
+
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Lấy đối tượng button
+var topButton = document.querySelector('.top-page-btn');
+// Thêm sự kiện cuộn
+window.addEventListener('scroll', function () {
+  // Kiểm tra vị trí cuộn
+  if (window.scrollY > 0) {
+    // Hiển thị nút khi vị trí cuộn > 0
+    topButton.style.opacity = '1';
+    topButton.style.poterEvents = 'auto';
+  } else {
+    // Ẩn nút khi vị trí cuộn = 0
+    topButton.style.opacity = '0';
+    topButton.style.poterEvents = 'none';
+  }
 });

@@ -1,39 +1,46 @@
-.products{
+.products {
     margin-top: 20px;
 }
-.seemore{
+
+.seemore {
     border: none;
     text-decoration: none;
     color: #0170B9;
 }
-.name-product{
+
+.name-product {
     display: flex;
     margin-bottom: 15px;
     justify-content: space-between;
 }
-.product-list{
+
+.product-list {
     display: flex;
     justify-content: space-between;
     list-style: none;
+    max-width: 100%; /* Giới hạn chiều rộng của hình ảnh là 100% của khung cha */
+    max-height: 100%; /* Giới hạn chiều cao của hình ảnh */
+    overflow: hidden; /* ẩn phần ra khỏi cha */
 }
-.section-product{
+
+.section-product {
     margin-top: 30px;
     background-color: #f5f5f5;
     padding: 15px 15px;
 }
 
-.item-image{
+.item-image {
     width: 150px;
     height: 150px;
 }
 
-.item-image:hover{
+.item-image:hover {
     transform: scale(110%);
     transition: transform 0.4s ease-in-out;
-    
+
 }
 
-.btn-add-to-cart{
+.btn-add-to-cart {
     background: linear-gradient(to right, #ff4a4a, #008CBA);
     background-color: #4CAF50;
     color: white;
@@ -53,26 +60,30 @@
     background: #008CBA;
     scale: 110%;
 }
-.product-item{
+
+.product-item {
     margin: 0px 5px 0px 5px;
     width: 20%;
 }
-.product-name{
-    display: -webkit-box; -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical; 
-        overflow: hidden; 
-        text-overflow: ellipsis; 
-        word-break: break-word;
+
+.product-name {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
     text-align: left;
     font-size: 13px;
     margin: 3px 0px;
     line-height: 30px;
 }
-.product-price{
+
+.product-price {
     text-align: left;
     color: blue;
 }
 
-.product-item{
+.product-item {
     text-align: center;
 }

@@ -54,12 +54,15 @@
     color: black;
     font-size: 16px;
     background-color: #fff;
-    padding: 10px 10px;
+    padding: 10px 20px;
     border-radius: 10px;
     width: 500px;  
     
 }
 .search-btn{
+    width: 50px;
+    height: 50px;
+    color: #000;
     background-color: #fff;
     border: none;
     padding: 10px 10px;
@@ -73,23 +76,18 @@
     display: flex;
 }
 
-/* button[type="submit"] {
-    padding: 8px 12px;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    margin-left: 8px;
-    cursor: pointer;
-  } */
 
 .shopping-cart-page{
     color: #fff;
+    cursor: pointer;
 }
 
 .shopping-cart:hover{
-    border: 1px solid #fff;
+    /* border: 1px solid #fff; */
     background-color: #fff;
     color: #FF4A4A;
+    top: 15px;
+    transition: all 0.3s ease;
 } 
 .shopping-cart{
     font-size: 30px;
@@ -100,7 +98,6 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     background-color: #fff;
     color: #FF4A4A;
-    border-radius: 10%;
 }
 
 .header-bot #nav-items{
@@ -130,26 +127,12 @@
 .banner-left{
     position: relative;
 }
-/* .button{
-    position: absolute;
-    top: 50%;
-    color: #000;
-    font-size: 30px;
-    transform: translateY(-50%);
-    border: none;
-    cursor: pointer;
-}
-.prev{
-   left: 10px;
-}
-.next{
-    right: 10px;
-} */
+
 
 /* banner trượt */
 .slideshow-container {
     position: relative;
-    height: 400px;
+    height: 215px;
     overflow: hidden;
   }
   .slide {
@@ -232,7 +215,6 @@
 #products{
     border-collapse: collapse;
     width: 100%;
-    margin-top: 30px;
 }
 td, th {
     border: 1px solid #dddddd;
@@ -304,7 +286,7 @@ th a{
     width: 40%;
 }
 #ft-top-page form{
-    width: 40%;
+    /* width: 40%; */
 }
 #ft-top-page input{
     border: none;
@@ -340,6 +322,22 @@ th a{
 .submit-text-contact{
     padding: 10px 20px;
     font-size: 15px;
+    height: 38px;
+}
+
+.submit-btn-contact{
+    background-color: #fff;
+    color: #000;
+    border: none;
+    width: 39px;
+    height: 39px;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.contact-map{
+    text-align: center;
 }
 #ft-bottom{
     border-top: 1px solid #fff;
@@ -353,20 +351,21 @@ th a{
     font-size: 30px;
     width: 50px;
     height: 50px;
-    border-radius: 5px;
-    display: block;
     position: fixed;
     bottom: 40px;
     right: 20px;
     text-align: center;
     align-items: center;
-    
+    opacity: 0;
+    border: none;
+    transition: all 0.3s ease-in-out;
 }
 .top-page-icon{   
    padding: 10px 0px 0px 0px
 }
 .top-page-btn:hover{
-    
     background-color: #fff;
     color: #FF4A4A;
+    bottom: 45px;
+    transition: all 0.3s ease;
 }

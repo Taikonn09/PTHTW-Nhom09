@@ -28,7 +28,7 @@ input[type=number] {
   width: 40px;
   text-align: center;
 }
-
+/* 
 button {
   background-color: #f44336;
   color: white;
@@ -41,7 +41,7 @@ button {
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 4px;
-}
+} */
 
 #show-cart{
   position: fixed;
