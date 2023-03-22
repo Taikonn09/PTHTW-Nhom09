@@ -1,0 +1,52 @@
+*{
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-blog{
+    width: 1200px;
+    margin: 0 auto;
+}
+.container-blog-content{
+    width: 980px;
+    margin: 0 auto;
+}
+
+.heading-blog{
+    text-align: center;
+    background-color: #eeeeee;
+    padding: 30px 0px;
+    color: #ff0404;
+    margin-top: 30px;
+    font-size: 25px;
+}
+.content-item{
+    display: flex;
+    margin-top: 30px;
+}
+
+.content-left{
+    width: 500px;
+    height: auto;
+}
+.content-right{
+    margin-left: 30px;
+}
+
+.content-name{
+    color: #777;
+}
+
+.content-right p{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.content-right a{
+    text-decoration: none;
+    color: #0170b9;
+}
+.content-right a:hover{
+    color: #ff4a4a;
+}
