@@ -40,11 +40,12 @@
     background-color: black;
     color: #fff;
     transition: all 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 
 /* content */
-#content-produc{
+#content-product{
     width: 70%;
     margin-left: 20px;
 }
