@@ -23,7 +23,8 @@ body{
 }
 #left-pay-page{
   margin-right: 15px;
-  width: 60%;
+  width: 50%;
+  height: 700px;
 }
 
 .infomation{
@@ -113,6 +114,11 @@ textarea{
   padding: 15px 15px;
   font-size: 15px;
 }
+#show-addrest{
+    /* display: none; */
+    transition: display 0.3s linear;
+  
+}
 
 .input-addrest{
   margin-top: 10px;
@@ -125,7 +131,10 @@ textarea{
 /*right*/
 #right-pay-page{
   margin-left: 15px;
-  width: 40%;
+  width: 50%;
+  border: 1px solid lightgray;
+  background-color: lightgray;
+  padding: 20px 20px;
 }
 
 table {
@@ -167,6 +176,23 @@ input[type="checkbox"] {
   margin-right: 5px;
 }
 
+.pay-method{
+  display: flex;
+  margin: 10px 0px;
+  margin-left: 50px;
+}
+.pay-method input{
+  width: 20px;
+  height: 20px;
+  margin-left: 90px;
+  cursor: pointer;
+}
+
+#input-bank-card input{
+  margin: 10px 0px;
+  width: 100%;
+}
+
 .checkout-btn{
   background-color: #0170B9;
   color: #fff;
@@ -178,6 +204,7 @@ input[type="checkbox"] {
 .checkout-btn:hover{
   background-color: black;
   color: #fff;
+  transition: all 0.5s ease-in-out;
 }
 
 

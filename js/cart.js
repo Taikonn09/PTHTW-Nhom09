@@ -12,7 +12,6 @@ function showCart() {
 
 //-----------------------------------
 
-
 const btn = document.querySelectorAll("button");
 
 btn.forEach(function (button, index) {
@@ -52,7 +51,6 @@ function cartTotal() {
 document.getElementById("show-cart").style.display = "none"
 
 
-
 /*-------------Đại (pop-up addrest user)---------------*/
 function filterCity(keyword) {
     const citySelect = document.getElementById("city");
@@ -65,12 +63,24 @@ function filterCity(keyword) {
     }
 }
 
-function oneclick() {
+function showAddrest() {
     // Lấy phần tử input từ DOM
-    let inputElement = document.getElementById("input");
-
+    let inputElement = document.getElementById("input-addrest");
     // Kiểm tra trạng thái của checkbox
-    if (document.getElementById("checkbox").checked) {
+    if (document.getElementById("show-addrest").checked) {
+        // Nếu checkbox được chọn, hiển thị phần tử input
+        inputElement.style.display = "block";
+    } else {
+        // Nếu checkbox không được chọn, ẩn phần tử input
+        inputElement.style.display = "none";
+    }
+}
+
+function showBankCard() {
+    // Lấy phần tử input từ DOM
+    let inputElement = document.getElementById("input-bank-card");
+    // Kiểm tra trạng thái của checkbox
+    if (document.getElementById("show-bank-card").checked) {
         // Nếu checkbox được chọn, hiển thị phần tử input
         inputElement.style.display = "block";
     } else {
