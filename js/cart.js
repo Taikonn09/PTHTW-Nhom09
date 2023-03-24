@@ -10,7 +10,7 @@ function showCart() {
     }
 }
 
-//-----------------------------------
+//--------------------------------lấy products------------------------
 
 const btn = document.querySelectorAll("button");
 
@@ -47,9 +47,7 @@ function cartTotal() {
 
 }
 
-
 document.getElementById("show-cart").style.display = "none"
-
 
 /*-------------Đại (pop-up addrest user)---------------*/
 function filterCity(keyword) {
@@ -87,6 +85,11 @@ function showBankCard() {
         // Nếu checkbox không được chọn, ẩn phần tử input
         inputElement.style.display = "none";
     }
+}
+
+
+function locationPayPage(){
+    window.location.href = "thanhtoan.html";
 }
 
 

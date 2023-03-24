@@ -104,10 +104,27 @@
     color: #FF4A4A;
 }
 
+.location-pay{
+    background-color: #1070B9;
+    font-size: 20px;
+    padding: 5px 10px;
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    border: none;
+    color: #fff;
+}
+.location-pay:hover{
+    cursor: pointer;
+    background-color: #000;
+    transform: translateY(-5px);
+    transition: all 0.3s ease-in-out;
+}
+
 .header-bot #nav-items{
     display: flex;
     justify-content: space-between;
-    font-size: 16px;
+    /* font-size: 13px; */
     list-style: none;
     padding: 10px 0px;
     margin-top: 10px;
@@ -128,11 +145,9 @@
 
 /* main */
 
-
 .banner-left{
     position: relative;
 }
-
 
 /* banner trượt */
 .slideshow-container {
@@ -237,8 +252,11 @@ th img{
 th span{
     width: 100%;
 }
-th:hover{
-    background-color: #FF4A4A;
+#products tr th:hover{
+    background-color: #999999;
+    cursor: pointer;
+    scale: 110%;
+    transition: all 0.3s ease-in-out;
 }
 .prodcut-name{
     width: 100%;
@@ -373,4 +391,5 @@ th a{
     color: #FF4A4A;
     bottom: 45px;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
