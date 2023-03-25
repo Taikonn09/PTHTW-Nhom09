@@ -149,7 +149,7 @@
 li,
 a {
     list-style-type: none;
-    color: rgb(12, 8, 252);
+    color: #0170B9;
     text-decoration: none;
     margin-top: 20px;
 }
@@ -179,11 +179,11 @@ span {
 
 /*----------------- list-page-------------------*/
 
-.list-products-page {
+.list-products-page{
     text-align: center;
 }
 
-.list-page {
+.list-page{
     display: inline-block;
     list-style-type: none;
     padding: 10px 10px;
@@ -195,8 +195,16 @@ span {
     padding: 10px;
     margin: 5px;
     background-color: #999999;
-    color: #fff;    
+    color: #fff; 
+    cursor: pointer;
 }
-.list-page .active{
+
+.list-page li:hover{
+    transition: all 0.5s ease-in-out;
+    transform: translateY(-5px);
+    background-color: #0170B9;
+}
+.list-page .active, .list-page .active:hover{
     background-color: #ff4a4a;
+    display: unset;
 }

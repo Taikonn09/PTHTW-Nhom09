@@ -18,6 +18,12 @@ function showSlides() {
 showSlides();
 
 
+
+
+
+
+
+
 //---------------------------nút về đầu trang---------------------------------------------------------------
 
 function scrollToTop() {
@@ -41,7 +47,6 @@ window.addEventListener('scroll', function () {
 });
 
 /*--------mấy chức năng chưa làm hoặc link trống dùng onclick này nha--------*/
-
 function future(){
   alert("chức năng đang phát triển ^^")
 }

@@ -37,6 +37,7 @@
 .item-image:hover {
     transform: scale(110%);
     transition: transform 0.4s ease-in-out;
+    cursor: pointer;
 }
 
 .btn-add-to-cart {
@@ -99,7 +100,4 @@
     text-decoration: none;
     color: #0170B9;
 }
-.seemore:hover{
-   
 
-}
