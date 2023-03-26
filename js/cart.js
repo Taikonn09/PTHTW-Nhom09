@@ -1,5 +1,4 @@
 
-
 //ẩn hiện giỏ hàng
 function showCart() {
     var x = document.getElementById("show-cart");
@@ -10,87 +9,79 @@ function showCart() {
     }
 }
 
-//--------------------------------lấy products------------------------
+// Lấy danh sách sản phẩm
+let productList = document.querySelectorAll('.product-list .product-item');
 
-const btn = document.querySelectorAll("button");
-
-btn.forEach(function (button, index) {
-    button.addEventListener("click", function (event) {
-        {
-            var btnItem = event.target
-            var product = btnItem.parentElement
-            var productImg = product.querySelector("img").src
-            var productName = product.querySelector("p").innerText
-            var productPrice = product.querySelector("span").innerText
-
-            addToCart(productImg, productName, productPrice)
-        }
-    })
-})
-
-function addToCart(productImg, productName, productPrice) {
-    var addtr = document.createElement("tr")
-    var trcontent = '<tr data-id="1"><td><img style="width: 100px; height: 100px" src="' + productImg + '"></td><td>' + productName + '</td><td><input style="width: 20%" type="number" value="1" min="1" data-price="10"></td><td><p>' + productPrice + '</p></td><td><button class="btn-delete">Xóa</button></td></tr>'
-    addtr.innerHTML = trcontent
-    var cartTable = document.querySelector("tbody")
-    cartTable.append(addtr)
-    cartTotal()
-}
-
-function cartTotal() {
-    var cartItem = document.querySelectorAll("tbody tr")
-    for (i = 0; i < cartItem.lenght; i++) {
-        var inputValue = cartItem[i].querySelector("input")
-        var productPrice = cartItem[i].querySelector("span")
-        console.log(productPrice)
-    }
-
-}
-
-document.getElementById("show-cart").style.display = "none"
-
-/*-------------Đại (pop-up addrest user)---------------*/
-function filterCity(keyword) {
-    const citySelect = document.getElementById("city");
-    for (let i = 0; i < citySelect.options.length; i++) {
-        if (citySelect.options[i].text.toLowerCase().indexOf(keyword.toLowerCase()) !== -1) {
-            citySelect.options[i].style.display = "";
-        } else {
-            citySelect.options[i].style.display = "block";
-        }
-    }
-}
-
-function showAddrest() {
-    // Lấy phần tử input từ DOM
-    let inputElement = document.getElementById("input-addrest");
-    // Kiểm tra trạng thái của checkbox
-    if (document.getElementById("show-addrest").checked) {
-        // Nếu checkbox được chọn, hiển thị phần tử input
-        inputElement.style.display = "block";
+// Lặp qua từng sản phẩm và thêm sự kiện click
+productList.forEach(productItem => {
+  let addToCartButton = productItem.querySelector('.btn-add-to-cart');
+  addToCartButton.addEventListener('click', function() {
+    // Kiểm tra xem sản phẩm đã có trong giỏ hàng hay chưa
+    let cartItem = document.querySelector(`#mycart [data-id="${productItem.dataset.key}"]`);
+    if (cartItem) {
+      // Nếu sản phẩm đã có trong giỏ hàng, tăng số lượng sản phẩm
+    //   let quantity = parseInt(cartItem.querySelector('.quantity').textContent) + 1;
+    //   cartItem.querySelector('.quantity').textContent = quantity;
+      alert('Sản phẩm đã tồn tại ^^')
     } else {
-        // Nếu checkbox không được chọn, ẩn phần tử input
-        inputElement.style.display = "none";
+      // Nếu sản phẩm chưa có trong giỏ hàng, tạo một sản phẩm mới để thêm vào giỏ hàng
+      let cartItem = document.createElement('tr');
+      cartItem.classList.add('cart-item');
+      cartItem.dataset.id = productItem.dataset.key;
+      cartItem.innerHTML = `
+      <td class="item-image"><img src="${productItem.querySelector('.item-image').src}" alt="Product image"></td>
+      <td class="product-name">${productItem.querySelector('.product-name').textContent}</td>
+      <td class="product-price">${productItem.querySelector('.product-price').innerHTML}</td>
+      <td class="quantity">
+        <button class="decrease-quantity">-</button>
+        <span>1</span>
+        <button class="increase-quantity">+</button>
+      </td>
+      <td class="remove-item"><button class="btn-remove-item">Xóa</button></td>
+    `;
+  
+    // Thêm sản phẩm vào giỏ hàng
+    let cartList = document.querySelector('#mycart');
+    cartList.appendChild(cartItem);
+    alert('Thêm sản phẩm thành công ^^')
+  
+    // Thêm sự kiện click cho button xóa sản phẩm
+    let removeItemButton = cartItem.querySelector('.btn-remove-item');
+    removeItemButton.addEventListener('click', function() {
+      cartItem.remove();
+      alert('Xóa sản phẩm thành công ^^');
+    });
+  
+    // Thêm sự kiện click cho button giảm số lượng sản phẩm
+    let decreaseButton = cartItem.querySelector('.decrease-quantity');
+    decreaseButton.addEventListener('click', function() {
+      let quantity = parseInt(cartItem.querySelector('.quantity span').textContent);
+      if (quantity > 1) {
+        quantity--;
+        cartItem.querySelector('.quantity span').textContent = quantity;
+      }
+    });
+  
+    // Thêm sự kiện click cho button tăng số lượng sản phẩm
+let increaseButton = cartItem.querySelector('.increase-quantity');
+increaseButton.addEventListener('click', function() {
+  let quantity = parseInt(cartItem.querySelector('.quantity span').textContent);
+  let price = parseFloat(productItem.querySelector('.product-price').textContent.replace(',', '.'));
+  quantity++;
+  cartItem.querySelector('.quantity span').textContent = quantity;
+  cartItem.querySelector('.product-price').innerHTML = (price * quantity).toFixed(2).replace('.', ',') + ' đ';
+});
+
     }
-}
-
-function showBankCard() {
-    // Lấy phần tử input từ DOM
-    let inputElement = document.getElementById("input-bank-card");
-    // Kiểm tra trạng thái của checkbox
-    if (document.getElementById("show-bank-card").checked) {
-        // Nếu checkbox được chọn, hiển thị phần tử input
-        inputElement.style.display = "block";
-    } else {
-        // Nếu checkbox không được chọn, ẩn phần tử input
-        inputElement.style.display = "none";
-    }
-}
+  });
+});
 
 
-function locationPayPage(){
-    window.location.href = "thanhtoan.html";
-}
+
+
+
+
+
 
 
 
