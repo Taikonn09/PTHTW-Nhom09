@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Trang bán hàng</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .product {
+            flex: 1 0 30%;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .product h2 {
+            margin: 10px 0;
+        }
+
+        .product p {
+            margin: 0;
+        }
+
+        .button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+
+        .button:hover {
+            background-color: #555;
+        }
+
+        .cart {
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .cart ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .cart li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        .cart li:last-child {
+            border-bottom: none;
+        }
+
+        .cart h2 {
+            margin: 0;
+        }
+
+        .cart p {
+            margin: 10px 0 0 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .cart input {
+            width: 50px;
+            margin-left: 10px;
+        }
+
+        .cart .button {
+            background-color: #fff;
+            color: #333;
+            padding: 5px 10px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+
+        .cart .button:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        #cart-container {
+            position: fixed;
+            top: 50px;
+            right: 10px;
+            display: none;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 100px;
+            z-index: 999;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Trang bán hàng</h1>
+    </header>
+    <main>
+        <div class="product">
+            <img src="https://picsum.photos/200" alt="Product">
+            <h2>Sản phẩm A</h2>
+            <p>Giá: $10</p>
+            <button class="button" onclick="addToCart('product-a', 'Sản phẩm A', 10)">Thêm vào giỏ hàng</button>
+        </div>
+        <div class="product">
+            <img src="https://picsum.photos/200" alt="Product">
+            <h2>Sản phẩm B</h2>
+
+            <p>Giá: $20</p>
+            <button class="button" onclick="addToCart('product-b', 'Sản phẩm B', 20)">Thêm vào giỏ hàng</button>
+        </div>
+        <div class="product">
+            <img src="https://picsum.photos/200" alt="Product">
+            <h2>Sản phẩm C</h2>
+            <p>Giá: $30</p>
+            <button class="button" onclick="addToCart('product-c', 'Sản phẩm C', 30)">Thêm vào giỏ hàng</button>
+        </div>
+    </main>
+    <button id="cart-toggle">Giỏ hàng</button>
+    <div id="cart-container">
+        <ul id="cart-items"></ul>
+        <div id="cart-total"></div>
+    </div>
+
+
+    <script>
+        let cart = [];
+        let cartToggle = document.getElementById('cart-toggle');
+        let cartContainer = document.getElementById('cart-container');
+
+        cartToggle.addEventListener('click', () => {
+            if (cartContainer.style.display === 'none') {
+                cartContainer.style.display = 'block';
+            } else {
+                cartContainer.style.display = 'none';
+            }
+        });
+
+        function addToCart(id, name, price) {
+            let item = cart.find(item => item.id === id);
+            if (item) {
+                item.quantity++;
+            } else {
+                cart.push({
+                    id: id,
+                    name: name,
+                    price: price,
+                    quantity: 1
+                });
+            }
+            updateCart();
+        }
+
+        function updateCart() {
+            let cartItemsElement = document.getElementById('cart-items');
+            let cartTotalElement = document.getElementById('cart-total');
+            let cartTotal = 0;
+            cartItemsElement.innerHTML = '';
+            cart.forEach(item => {
+                let li = document.createElement('li');
+                let img = document.createElement('img');
+                let name = document.createElement('span');
+                let price = document.createElement('span');
+                let quantity = document.createElement('input');
+                let remove = document.createElement('button');
+                img.src = item.image;
+                name.textContent = item.name;
+                price.textContent = '$' + (item.price * item.quantity);
+                quantity.type = 'number';
+                quantity.min = 1;
+                quantity.value = item.quantity;
+                quantity.addEventListener('change', () => {
+                    item.quantity = quantity.value;
+                    updateCart();
+                });
+                remove.textContent = 'Xóa';
+                remove.addEventListener('click', () => {
+                    cart.splice(cart.indexOf(item), 1);
+                    updateCart();
+                });
+                li.appendChild(img);
+                li.appendChild(name);
+                li.appendChild(price);
+                li.appendChild(quantity);
+                li.appendChild(remove);
+                cartItemsElement.appendChild(li);
+                cartTotal += item.price * item.quantity;
+            });
+            cartTotalElement.textContent = cartTotal;
+        }
+
+        function checkout() {
+            alert('Thanh toán thành công!');
+            cart = [];
+            updateCart();
+        }
+    </script>
+</body>
+
+</html>
