@@ -1,0 +1,49 @@
+
+
+<form>
+    <input type="text" id="search" placeholder="Tìm kiếm sản phẩm...">
+    <button type="button" onclick="searchProducts()">Tìm kiếm</button>
+  </form>
+  
+  <div id="searchResults">
+    <!-- Kết quả tìm kiếm được hiển thị ở đây -->
+  </div>
+  <style>
+    .searchResult {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+  </style>
+
+  <script>
+    // Dữ liệu sản phẩm
+var products = [
+  { name: "Sản phẩm 1", price: 100 },
+  { name: "Sản phẩm 2", price: 200 },
+  { name: "Sản phẩm 3", price: 300 },
+  { name: "Sản phẩm 4", price: 400 },
+  { name: "Sản phẩm 5", price: 500 },
+];
+
+function searchProducts() {
+  // Lấy giá trị từ ô tìm kiếm
+  var searchValue = document.getElementById("search").value.toLowerCase();
+  
+  // Tìm kiếm sản phẩm theo giá trị đã nhập
+  var results = products.filter(function(product) {
+    return product.name.toLowerCase().indexOf(searchValue) !== -1;
+  });
+  
+  // Hiển thị kết quả tìm kiếm
+  var searchResults = document.getElementById("searchResults");
+  searchResults.innerHTML = "";
+  
+  for (var i = 0; i < results.length; i++) {
+    var result = results[i];
+    var resultHtml = "<div class='searchResult'><h3>" + result.name + "</h3><p>Giá: " + result.price + "</p></div>";
+    searchResults.innerHTML += resultHtml;
+  }
+}
+
+  </script>

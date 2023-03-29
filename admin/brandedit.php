@@ -6,10 +6,18 @@
 
 <?php
     $brand = new brand;
+    
+    $brand_id = $_GET['brand_id'];
+
+    $get_brand = $brand -> get_brand($brand_id);
+    if($get_brand){
+        $resultA = $get_brand -> fetch_assoc();
+    }
+
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $cartegory_id = $_POST['cartegory_id'];
         $brand_name = $_POST['brand_name'];
-        $insert_brand = $brand -> insert_brand($cartegory_id, $brand_name);
+        $update_brand = $brand -> update_brand($cartegory_id, $brand_name, $brand_id);
     }
 ?>
 
@@ -23,7 +31,7 @@
 
 <div class="content-right">
             <div class="content-cartegory-add">
-                <h1>Thêm loại sản phẩm</h1> <br>
+                <h1>Sửa loại sản phẩm</h1> <br>
                 <form action="" method="POST">
                     <select name="cartegory_id" id="">
                         <option value="">--Chọn danh mục--</option>
@@ -33,14 +41,14 @@
                                 while($result = $show_cartegory -> fetch_assoc()){
                           
                         ?>
-                        <option value="<?php echo $result['cartegory_id'] ?>"><?php echo $result['cartegory_name'] ?></option>
+                        <option <?php if($resultA['cartegory_id'] == $result['cartegory_id']) { echo "SELECTED";} ?> value="<?php echo $result['cartegory_id'] ?>"><?php echo $result['cartegory_name'] ?></option>
                         <?php         
                                 }
                             };
                         ?>
                     </select> <br>
-                    <input required name="brand_name" type="text" placeholder="Nhập tên loại sản phẩm">
-                    <button type="submit">Thêm</button>
+                    <input required name="brand_name" type="text" placeholder="Nhập tên loại sản phẩm" value="<?php $resultA['brand_name'] ?>">
+                    <button type="submit">Sửa</button>
                 </form>
             </div>
         </div>

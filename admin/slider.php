@@ -19,7 +19,7 @@
                 <li>
                     <a href="">Sản Phẩm</a>
                     <ul>
-                        <li><a href="">Thêm Sản Phẩm</a></li>
+                        <li><a href="productadd.php">Thêm Sản Phẩm</a></li>
                         <li><a href="">Danh sách sản phẩm</a></li>
                     </ul>
                 </li>
