@@ -24,18 +24,41 @@
             return $result;
         }
 
+        public function insert_product(){
+            $product_name = $_POST['product_name'];
+            $cartegory_id = $_POST['cartegory_id'];
+            $brand_id = $_POST['brand_id'];
+            $product_price = $_POST['product_price'];
+            $product_price_new = $_POST['product_price_new'];
+            $product_describe = $_POST['product_describe'];
+            $product_img = $_FILES['product_img']['name'];
 
-
-
-
-
-
-        public function insert_brand($cartegory_id, $brand_name){
-            $query = "INSERT INTO tbl_brand (cartegory_id, brand_name) VALUE ('$cartegory_id','$brand_name')";
+            $query = "INSERT INTO tbl_product(
+                product_name, 
+                cartegory_id,
+                brand_id, 
+                product_price,
+                product_price_new, 
+                product_describe,
+                product_img) 
+                    VALUE (
+                        '$product_name',
+                        '$cartegory_id',
+                        '$brand_id',
+                        '$product_price',
+                        '$product_price_new',
+                        '$product_describe',
+                        '$product_img')";
             $result = $this -> db -> insert($query);
-            // header('Location: brandlist.php');
             return $result;
         }
+
+
+
+
+
+
+       
 
         
 
