@@ -30,8 +30,9 @@
             $brand_id = $_POST['brand_id'];
             $product_price = $_POST['product_price'];
             $product_price_new = $_POST['product_price_new'];
-            $product_describe = $_POST['product_describe'];
+            $product_description = $_POST['product_description'];
             $product_img = $_FILES['product_img']['name'];
+            move_uploaded_file($_FILES['product_img']['tmp_name'],"upload/".$_FILES['product_img']['name']);
 
             $query = "INSERT INTO tbl_product(
                 product_name, 
@@ -39,7 +40,7 @@
                 brand_id, 
                 product_price,
                 product_price_new, 
-                product_describe,
+                product_description,
                 product_img) 
                     VALUE (
                         '$product_name',
@@ -47,7 +48,7 @@
                         '$brand_id',
                         '$product_price',
                         '$product_price_new',
-                        '$product_describe',
+                        '$product_description',
                         '$product_img')";
             $result = $this -> db -> insert($query);
             return $result;

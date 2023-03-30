@@ -47,7 +47,7 @@
                                 <option value="">--Chọn--</option>
                                 <?php
                                     $show_brand = $product -> show_brand();
-                                    if($show_caregory) {
+                                    if($show_brand) {
                                         while($result = $show_brand -> fetch_assoc()){
                                 ?>
                                 <option value="<?php echo $result['brand_id'] ?>"><?php echo $result['brand_name'] ?></option>
@@ -65,12 +65,12 @@
                     </div>
 
                     <label for="">Mô tả sản phẩm <span style="color: red">*</span></label> <br>
-                    <textarea name="product_describe" require id="" cols="60" rows="5" placeholder="VD: kích thước, số lượng ..."></textarea>
+                    <textarea name="product_description" require id="" cols="60" rows="5" placeholder="VD: kích thước, số lượng ..."></textarea>
                     <br>
 
                     <label for="">Hình ảnh sản phẩm<span style="color: red">*</span></label>
                     <input name="product_img" type="file">
-                    <input name="product_img_describe" multiple type="file">
+                    <input name="product_img_description" multiple type="file">
                     <button type="submit">Thêm</button>
                 </form>
             </div>

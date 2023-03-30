@@ -2,50 +2,50 @@
 include("header.php");
 ?>
 
-<link rel="stylesheet" href="css/products.css">
+<link rel="stylesheet" href="css/timkiem.css">
 
 <?php
 // Kiểm tra biến $_GET["search"] có tồn tại hay không
 if (isset($_GET["search"])) {
-  // Lấy từ khóa tìm kiếm từ người dùng
   $search = $_GET["search"];
-
-  // Tạo kết nối đến cơ sở dữ liệu
   $conn = mysqli_connect("localhost", "root", "", "website_aio");
-
-  // Kiểm tra kết nối
   if ($conn->connect_error) {
     die("Kết nối không thành công: " . $conn->connect_error);
   }
-
-  // Thực hiện truy vấn SQL với LIKE
-  $sql = "SELECT * FROM sanpham WHERE name LIKE '%$search%' OR description LIKE '%$search%'";
+  $sql = "SELECT * FROM tbl_product WHERE product_name LIKE '%$search%' OR product_description LIKE '%$search%'";
   $result = $conn->query($sql);
+  if ($result && $result->num_rows > 0) {
 
-
-  // Kiểm tra kết quả truy vấn
-  if ($result->num_rows > 0) {
-
-    // Mở thẻ HTML để hiển thị danh sách sản phẩm
+    echo "<h3 class='heading-search--tk'>Kết quả tìm kiếm cho:". " <span>" .$search ."</span>" ."</h3>";
     echo "<ul class='product-list container-product-page'>";
-    // Xuất dữ liệu từng hàng
     while ($row = $result->fetch_assoc()) {
       echo "<li class='product-item'>";
-      // echo "<h3 class='product-name'>" . $row["name"] . "</h3>";
-      echo "<img class='product-image' src='" . $row["image"] . "' alt='Image of " . $row["name"] . "'>";
-      echo "<p class='product-price'>Giá: " . $row["price"] . "</p>";
-      echo "<p class='product-name'>Mô tả: " . $row["description"] . "</p>";
+      
+     
+      echo "<img class='product-image' src='" . $row["product_image"] . "' alt='Image of " . $row["product_name"] . "'>";
+      echo "<p class='product-price'>" . "<span>" . $row["product_price"] . "</span>" . "</p>";
+      echo "<p class='product-name'>" . $row["product_name"] . "</p>";
+      echo "<p class='product-description'>Mô tả: " . $row["product_description"] . "</p>";
       echo "<button class='btn-add-to-cart'>Thêm vào giỏ hàng</button>";
       echo "</li>";
     }
-    // Đóng thẻ HTML của danh sách sản phẩm
     echo "</ul>";
+  } else {
+
+    echo " <h3 class='else-heading-search'>Không có sản phẩm bạn muốn tìm, hãy thử lại ^^</h3>";
   }
-
-
-  // Đóng kết nối
   $conn->close();
 } else {
   echo "Vui lòng nhập từ khóa tìm kiếm!";
 }
+
 ?>
+
+
+
+
+
+
+
+
+

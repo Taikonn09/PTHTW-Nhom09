@@ -1,1 +1,45 @@
+.heading-search--tk{
+    margin: 30px 20px;
+    color: #777;
+}
+.heading-search--tk span{
+    text-transform: uppercase;
+    color: #0170b9;
+}
+.product-list{
+    margin: 20px 20px;
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+.product-item{
+    width: 33.33%;
+}
+.product-price span{
+    color:   red;
+}
+.product-name{
+    font-size: 15px;
+}
+.product-description{
+    color: #777;
+    text-align: left;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+.else-heading-search{
+    color: #777;
+    text-align: center;
+    align-items: center;
+    padding: 30px 30px;
+}
+
+
 
