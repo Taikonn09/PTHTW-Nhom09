@@ -5,6 +5,30 @@
     color: #000;
     outline: none;
 }
+/*---------------------------login----------------------*/
+.form{
+    text-align: center;
+    align-items: center;
+    padding: 100px 0px;
+}
+.form h2{
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.submit-btn-login{
+    text-align: right;
+}
+nav{
+    text-align: center;
+    padding: 0px 0px 10px 0px;
+}
+nav a{
+    margin: 0px 10px;
+}
+
+/*--------------------------------------------------------------------------*/
 
 a{
     text-decoration: none;
@@ -12,14 +36,19 @@ a{
 ul{
     list-style: none;
 }
-
 header{
-    text-align: center;
-    padding: 30px 0px;
     border-bottom: 1px solid #000;
 }
 header>h1{
+    text-align: center;
     text-transform: uppercase;
+    padding: 20px 0px;
+}
+header>nav{
+    margin-top: 20px; 
+}
+header nav a{
+    margin: 0px 10px;
 }
 
 .admin-content{

@@ -15,14 +15,11 @@ if (isset($_GET["search"])) {
   $sql = "SELECT * FROM tbl_product WHERE product_name LIKE '%$search%' OR product_description LIKE '%$search%'";
   $result = $conn->query($sql);
   if ($result && $result->num_rows > 0) {
-
-    echo "<h3 class='heading-search--tk'>Kết quả tìm kiếm cho:". " <span>" .$search ."</span>" ."</h3>";
-    echo "<ul class='product-list container-product-page'>";
+    echo "<p class='heading-search--tk container-search'>Kết quả tìm kiếm cho:". " <span>" .$search ."</span>" ."</p>";
+    echo "<ul class='product-list container-search'>";
     while ($row = $result->fetch_assoc()) {
-      echo "<li class='product-item'>";
-      
-     
-      echo "<img class='product-image' src='" . $row["product_image"] . "' alt='Image of " . $row["product_name"] . "'>";
+      echo "<li class='product-item '>";
+      echo "<img class='product-image' src='$row[product_img]' alt='Image of " . $row["product_name"] . "'>";
       echo "<p class='product-price'>" . "<span>" . $row["product_price"] . "</span>" . "</p>";
       echo "<p class='product-name'>" . $row["product_name"] . "</p>";
       echo "<p class='product-description'>Mô tả: " . $row["product_description"] . "</p>";
@@ -31,7 +28,6 @@ if (isset($_GET["search"])) {
     }
     echo "</ul>";
   } else {
-
     echo " <h3 class='else-heading-search'>Không có sản phẩm bạn muốn tìm, hãy thử lại ^^</h3>";
   }
   $conn->close();

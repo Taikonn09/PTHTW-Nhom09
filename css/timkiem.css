@@ -1,3 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container-search{
+    width: 1300px;
+    margin: 0px auto;
+}
+
 .heading-search--tk{
     margin: 30px 20px;
     color: #777;
@@ -7,14 +17,15 @@
     color: #0170b9;
 }
 .product-list{
-    margin: 20px 20px;
+   
     display: flex;
     /* justify-content: space-between; */
 }
 
 .product-item{
-    width: 33.33%;
+    width: 25%;
 }
+
 .product-price span{
     color:   red;
 }
@@ -26,6 +37,10 @@
     text-align: left;
     font-size: 13px;
     margin-bottom: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/trangchu.css">
     <link rel="stylesheet" href="css/cart.css">
@@ -34,13 +34,13 @@
                 </a>
 
                 <p class="header-top--item">
-                    <a href="dangnhap.html">
+                    <a href="dangnhap.php">
                         <i class="fa-solid fa-right-to-bracket"></i>
                         Đăng Nhập
                     </a>
                 </p>
                 <p class="header-top--item">
-                    <a href="dangky.html">
+                    <a href="dangky.php">
                         <i class="fa-sharp fa-solid fa-user-plus"></i>
                         Đăng Ký
                     </a>
@@ -70,7 +70,7 @@
 
             <section class="shopping-cart-page">
                 <a class="shopping-cart" onclick="showCart()"><i class="fa-solid fa-cart-shopping"></i></a>
-                
+
                 <div id="show-cart" style="display: none">
                     <table>
                         <thead>
@@ -79,7 +79,7 @@
                             </tr>
                         </thead>
                         <tbody id="mycart">
-                            
+
                         </tbody>
 
                         <tfoot>
@@ -253,7 +253,9 @@
                 </div>
                 <ul class="product-list">
                     <li class="product-item">
-                        <img class="item-image" src="images/trangchu/products/giay1.jpg" alt="Product image">
+                        <a href="infomation-product.html">
+                            <img class="item-image" src="images/trangchu/products/giay1.jpg" alt="Product image">
+                        </a>
                         <p class="product-name">Thùng 5 RAM giấy excel định lượng 700g - 500 tờ</p>
                         <p class="product-price">$<span>5.00</span></p>
                         <button class="btn-add-to-cart">Thêm vào giỏ hàng</button>
@@ -276,10 +278,10 @@
                         <p class="product-price">$<span>15.00</span></p>
                         <button class="btn-add-to-cart">Thêm vào giỏ hàng</button>
                     </li>
-                
-                </ul>   
+
+                </ul>
             </section>
-            
+
             <section class="seemore">
                 <a href="#main">Xem thêm các sản phẩm khác</a>
             </section>
@@ -289,7 +291,8 @@
 
     <footer id="footer-page">
         <div id="ft-top-page" class=" container-page">
-            <p>Đăng ký để được nhận ngay những tin tức độc quyền về sự kiện hấp dẫn và chương trình khuyến mãi sắp diễn ra!</p>
+            <p>Đăng ký để được nhận ngay những tin tức độc quyền về sự kiện hấp dẫn và chương trình khuyến mãi sắp diễn
+                ra!</p>
             <form action="">
                 <input style="outline: none;" class="submit-text-contact" type="text" placeholder="Email">
                 <button class="submit-btn-contact" type="submit">Gửi</button>
@@ -326,8 +329,10 @@
 
 
         <div class="contact-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15715.443719658673!2d105.774537!3d10.028333!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a0895a51d60719%3A0x9d76b0035f6d53d0!2sCan%20Tho%20University!5e0!3m2!1sen!2sus!4v1679451898422!5m2!1sen!2sus" 
-                width="900" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15715.443719658673!2d105.774537!3d10.028333!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a0895a51d60719%3A0x9d76b0035f6d53d0!2sCan%20Tho%20University!5e0!3m2!1sen!2sus!4v1679451898422!5m2!1sen!2sus"
+                width="900" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
 
         <div class="container-page">

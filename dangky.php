@@ -1,14 +1,18 @@
+
+<link rel="stylesheet" href="css/dangky.css">
+
+
 <div class="form">
     <h2>Đăng ký</h2>
     <form id="registerForm" method="POST" action="dangky.php">
         <label for="regUsername">Tên đăng nhập:</label>
-        <input type="text" id="regUsername" name="user_name" required>
+        <input type="text" id="regUsername" name="regUsername" required>
 
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
 
         <label for="regPassword">Mật khẩu:</label>
-        <input type="password" id="regPassword" name="user_pass" required>
+        <input type="password" id="regPassword" name="regPassword" required>
 
         <label for="confirmPassword">Xác nhận mật khẩu:</label>
         <input type="password" id="confirmPassword" name="confirmPassword" required>
@@ -18,7 +22,7 @@
 
     <p class="heading-singup-page">Chọn đăng ký, bạn đã đồng ý <a href="#">Chính sách bảo mật</a> và <a href="#">Điều khoản sử dụng</a> của chúng tôi. Bạn cũng chấp nhận rằng bạn biết rằng dữ liệu của bạn sẽ được lưu trữ.</p>
 
-    <p class="heading-login-signup">Bạn đã có tài khoản? <a href="dangnhap.php">Đăng nhập</a></p>
+    <p class="heading-login-signup">Bạn đã có tài khoản? <a href="dangnhap.html">Đăng nhập</a></p>
 </div>
 
 <?php
@@ -30,12 +34,12 @@ if (!$conn) {
     die("Kết nối thất bại: " . mysqli_connect_error());
 }
 // Lấy dữ liệu từ form đăng ký
-$username = $_POST['user_name'];
+$username = $_POST['regUsername'];
 $email = $_POST['email'];
-$password = $_POST['user_pass'];
+$password = $_POST['regPassword'];
 
 // Kiểm tra xem tên đăng nhập đã tồn tại trong cơ sở dữ liệu chưa
-$sql_check_user = "SELECT * FROM tbl_user WHERE user_name = '$username'";
+$sql_check_user = "SELECT * FROM tbl_user WHERE username = '$username'";
 $result_check_user = mysqli_query($conn, $sql_check_user);
 
 if (mysqli_num_rows($result_check_user) > 0) {
