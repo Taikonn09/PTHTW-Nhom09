@@ -19,7 +19,7 @@ if (isset($_GET["search"])) {
     echo "<ul class='product-list container-search'>";
     while ($row = $result->fetch_assoc()) {
       echo "<li class='product-item '>";
-      echo "<img class='product-image' src='$row[product_img]' alt='Image of " . $row["product_name"] . "'>";
+      echo "<img class='product-image' src='admin/upload/" . htmlspecialchars($row['product_img']) . "' alt='Image of " . htmlspecialchars($row["product_name"]) . "'>";
       echo "<p class='product-price'>" . "<span>" . $row["product_price"] . "</span>" . "</p>";
       echo "<p class='product-name'>" . $row["product_name"] . "</p>";
       echo "<p class='product-description'>Mô tả: " . $row["product_description"] . "</p>";

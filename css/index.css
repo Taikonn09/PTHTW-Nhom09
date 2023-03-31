@@ -21,7 +21,7 @@
     color: #fff;
 }
 .header-top-items>a:hover{
-    background-color: #fff;
+    /* background-color: #fff; */
     color: #FF4A4A;
     transition: all 0.3s ease-in-out;
 }
@@ -33,7 +33,6 @@
 .header-top--item a{
     text-decoration: none;
     color: #fff;
-    /* padding: 10px; */
     padding: 10px 10px;
 }
 

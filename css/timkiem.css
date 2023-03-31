@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 .container-search{
-    width: 1300px;
+    width: 1200px;
     margin: 0px auto;
 }
 
@@ -20,10 +20,17 @@
    
     display: flex;
     /* justify-content: space-between; */
+    flex-wrap: wrap;
 }
 
 .product-item{
-    width: 25%;
+    
+    margin-bottom: 20px;
+
+}
+.product-img{
+    width: 225px;
+    height: 225px;
 }
 
 .product-price span{
