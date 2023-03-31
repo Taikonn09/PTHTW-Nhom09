@@ -49,7 +49,7 @@ thead {
 }
 
 .cart-item .product-name{
-  width: 450px;
+  width: 400px;
 }
 
 .cart-item img, .product-name, .product-price{
@@ -57,7 +57,7 @@ thead {
   border: none;
 }
 .quantity{
-  width: 10%;
+  width: 20%;
   margin-right: 10px;
   border: none;
 }

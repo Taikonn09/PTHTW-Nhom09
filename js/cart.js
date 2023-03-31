@@ -1,4 +1,3 @@
-
 //ẩn hiện giỏ hàng
 function showCart() {
   var x = document.getElementById("show-cart");
@@ -49,27 +48,34 @@ productList.forEach(productItem => {
         alert('Xóa sản phẩm thành công ^^');
       });
 
-      //Thêm sự kiện click cho button giảm số lượng sản phẩm
-      let decreaseButton = cartItem.querySelector('.decrease-quantity');
-      decreaseButton.addEventListener('click', function () {
-        let quantity = parseInt(cartItem.querySelector('.quantity span').textContent);
-        if (quantity > 1) {
-          quantity--;
-          cartItem.querySelector('.quantity span').textContent = quantity;
-        }
-      });
+      // Thêm sự kiện click cho nút tăng giảm số lượng
+let decreaseQuantityButton = cartItem.querySelector('.decrease-quantity');
+let increaseQuantityButton = cartItem.querySelector('.increase-quantity');
+let quantityElement = cartItem.querySelector('.quantity span');
+let priceElement = cartItem.querySelector('.product-price span');
 
-      // Thêm sự kiện click cho button tăng số lượng sản phẩm
-      let increaseButton = cartItem.querySelector('.increase-quantity');
-      increaseButton.addEventListener('click', function () {
-        let quantity = parseInt(cartItem.querySelector('.quantity span').textContent);
-        let price = parseFloat(productItem.querySelector('.product-price').textContent.replace(',', '.'));
-        quantity++;
-        cartItem.querySelector('.quantity span').textContent = quantity;
-        cartItem.querySelector('.product-price').innerHTML = (price * quantity).toFixed(2).replace('.', ',') + ' đ';
-      });
+decreaseQuantityButton.addEventListener('click', function () {
+  let quantity = parseInt(quantityElement.textContent);
+  if (quantity > 1) {
+    quantity--;
+    quantityElement.textContent = quantity;
+    let price = parseFloat(priceElement.textContent);
+    let total = price * quantity;
+    cartItem.querySelector('.product-price').innerHTML = '$<span>' + total.toFixed(2) + '</span>';
+    updateCart();
+  }
+});
+
+increaseQuantityButton.addEventListener('click', function () {
+  let quantity = parseInt(quantityElement.textContent);
+  quantity++;
+  quantityElement.textContent = quantity;
+  let price = parseFloat(priceElement.textContent);
+  let total = price * quantity;
+  cartItem.querySelector('.product-price').innerHTML = '$<span>' + total.toFixed(2) + '</span>';
+  updateCart();
+});
+
     }
   });
 });
-
-
