@@ -38,6 +38,7 @@
   border: 1px solid #ccc;
   margin-bottom: 20px;
   box-sizing: border-box;
+  outline: none;
 }
 
 /* Định dạng nút submit */

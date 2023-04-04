@@ -20,23 +20,14 @@
     font-size: 16px;
     color: #fff;
 }
-.header-top-items>a:hover{
-    /* background-color: #fff; */
-    color: #FF4A4A;
-    transition: all 0.3s ease-in-out;
-}
+
 .header-top--item{
-    padding: 10px 10px;
-    color: #fff;
-    text-decoration: none;
-}
-.header-top--item a{
     text-decoration: none;
     color: #fff;
     padding: 10px 10px;
 }
 
-.header-top--item>a:hover{
+.header-top--item:hover{
     background-color: #fff;
     color: #FF4A4A;
     transition: all 0.3s ease-in-out;
@@ -84,11 +75,20 @@
     color: #fff;
     cursor: pointer;
 }
+#lenght-cart {
+    font-size: 25px;
+    position: absolute;
+    top: -15px;
+    right: -12px;
+    padding: 5px 5px;
+    background-color: #54595f;;
+    border-radius: 30px;
+    color: #fff;
+}
 
 .shopping-cart:hover{
-    /* border: 1px solid #fff; */
     background-color: #fff;
-    color: #FF4A4A;
+    color: #54595f;
     top: 15px;
     transition: all 0.3s ease;
 } 
@@ -100,7 +100,7 @@
     right: 40px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     background-color: #fff;
-    color: #FF4A4A;
+    color: #54595f;
 }
 
 .location-pay{
@@ -142,7 +142,7 @@
 
 
 
-/* main */
+/*--------------------------------- main---------------------------- */
 
 .banner-left{
     position: relative;
@@ -287,7 +287,7 @@ th a{
     justify-content: center;
 }
 
-/* footer */
+/* --------------------------footer---------------------------------- */
 
 #footer-page{
     justify-content: space-between;

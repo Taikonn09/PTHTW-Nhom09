@@ -33,18 +33,18 @@
                     Chính sách ưu đãi
                 </a>
 
-                <p class="header-top--item">
-                    <a href="dangnhap.php">
-                        <i class="fa-solid fa-right-to-bracket"></i>
-                        Đăng Nhập
-                    </a>
-                </p>
-                <p class="header-top--item">
-                    <a href="dangky.php">
-                        <i class="fa-sharp fa-solid fa-user-plus"></i>
-                        Đăng Ký
-                    </a>
-                </p>
+
+                <a class="header-top--item" href="dangnhap.php">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    Đăng Nhập
+                </a>
+
+
+                <a class="header-top--item" href="dangky.php">
+                    <i class="fa-sharp fa-solid fa-user-plus"></i>
+                    Đăng Ký
+                </a>
+
             </section>
         </article>
 
@@ -57,19 +57,20 @@
 
             <section class="search-page">
                 <form class="search-box" action="tk.php" method="get">
-                    <input type="text" name="search" class="search-text" placeholder="Nhập sản phẩm cần tìm cần tìm...">
+                    <input required type="text" name="search" class="search-text" placeholder="Nhập sản phẩm cần tìm cần tìm...">
                     <button class="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </section>
 
             <section class="logo-page">
-                <a href="index.html">
-                    <img style="width: 90px" src="images/logo.jpg" alt="logo">
-                </a>
+                
             </section>
 
             <section class="shopping-cart-page">
-                <a class="shopping-cart" onclick="showCart()"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a class="shopping-cart" onclick="showCart()">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <p id="lenght-cart">0</p>
+                </a>
 
                 <div id="show-cart" style="display: none">
                     <table>
@@ -258,25 +259,25 @@
                         </a>
                         <p class="product-name">Thùng 5 RAM giấy excel định lượng 700g - 500 tờ</p>
                         <p class="product-price">$<span>5.00</span></p>
-                        <button class="btn-add-to-cart">Thêm vào giỏ hàng</button>
+                        <button onclick="addToCart()" class="btn-add-to-cart">Thêm vào giỏ hàng</button>
                     </li>
                     <li class="product-item" data-key="2">
                         <img class="item-image" src="images/trangchu/products/giay1.jpg" alt="Product image">
                         <p class="product-name">Thùng 5 RAM giấy</p>
                         <p class="product-price">$<span>5.00</span></p>
-                        <button class="btn-add-to-cart">Thêm vào giỏ hàng</button>
+                        <button onclick="addToCart()" class="btn-add-to-cart">Thêm vào giỏ hàng</button>
                     </li>
                     <li class="product-item" data-key="3">
                         <img class="item-image" src="images/trangchu/products/giay1.jpg" alt="Product image">
                         <p class="product-name">Thùng 10 RAM giấy excel định lượng 700g - 500 tờ</p>
                         <p class="product-price">$<span>10.00</span></p>
-                        <button class="btn-add-to-cart">Thêm vào giỏ hàng</button>
+                        <button onclick="addToCart()" class="btn-add-to-cart">Thêm vào giỏ hàng</button>
                     </li>
                     <li class="product-item" data-key="4">
                         <img class="item-image" src="images/trangchu/products/giay1.jpg" alt="Product image">
                         <p class="product-name">Thùng 15 RAM giấy excel định lượng 700g - 500 tờ</p>
                         <p class="product-price">$<span>15.00</span></p>
-                        <button class="btn-add-to-cart">Thêm vào giỏ hàng</button>
+                        <button onclick="addToCart()" class="btn-add-to-cart">Thêm vào giỏ hàng</button>
                     </li>
 
                 </ul>
@@ -345,8 +346,8 @@
     </footer>
     <button class="top-page-btn" onclick="scrollToTop()"><i class="fa-solid fa-chevron-up top-page-icon"></i></button>
 
+    <script lang="javascript">var __vnp = {code : 18257,key:'', secret : '71b5694624c9e2cdd334c71d9fb86768'};(function() {var ga = document.createElement('script');ga.type = 'text/javascript';ga.async=true; ga.defer=true;ga.src = '//core.vchat.vn/code/tracking.js';var s = document.getElementsByTagName('script');s[0].parentNode.insertBefore(ga, s[0]);})();</script>
 </body>
 <script src="js/app.js"></script>
 <script src="js/cart.js"></script>
-
 </html>

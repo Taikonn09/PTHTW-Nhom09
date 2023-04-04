@@ -1,5 +1,3 @@
-// Phí Ngọc Tài
-
 //---------------------banner trên page------------------------------------------------------------------
 var slideIndex = 0;
 var slides = document.getElementsByClassName("slide");
@@ -17,6 +15,7 @@ function showSlides() {
 }
 showSlides();
 
+//------------------------check-box đăng nhập-----------------------------------------------------
 
 
 

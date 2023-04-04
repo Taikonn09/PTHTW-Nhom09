@@ -7,9 +7,10 @@
 }
 /*---------------------------login----------------------*/
 .form{
-    text-align: center;
-    align-items: center;
-    padding: 100px 0px;
+   
+    /* text-align: center; */
+    
+    /* padding: 100px 0px; */
 }
 .form h2{
     text-align: center;

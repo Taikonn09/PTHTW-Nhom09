@@ -7,6 +7,13 @@ function showCart() {
     x.style.display = "block";
   }
 }
+function addToCart() {
+  var cartCount = parseInt(document.getElementById("lenght-cart").innerText);
+  var newCartCount = cartCount + 1;
+  document.getElementById("lenght-cart").innerText = newCartCount;
+}
+
+
 
 // Lấy danh sách sản phẩm
 let productList = document.querySelectorAll('.product-list .product-item');
@@ -75,7 +82,6 @@ increaseQuantityButton.addEventListener('click', function () {
   cartItem.querySelector('.product-price').innerHTML = '$<span>' + total.toFixed(2) + '</span>';
   updateCart();
 });
-
-    }
+  }
   });
 });

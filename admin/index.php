@@ -8,23 +8,22 @@
     <title>Trang quản trị | AIO</title>
 </head>
 <body>
-    <div class="form">
-        <h2>Vui lòng đăng nhập</h2>
+    <fieldset class="form">
+        <legend> <h2>Vui lòng đăng nhập</h2></legend>
         <form id="loginForm" onsubmit="return login()" method="POST">
             <div>
-                <label for="username">Tên đăng nhập:</label> <br>
+                <label class="login-text" for="username">Tên đăng nhập:</label> <br>
                 <input type="text" id="username" name="user_name" required><br>
 
-                <label for="password">Mật khẩu:</label><br>
+                <label class="login-text" for="password">Mật khẩu:</label><br>
                 <input type="password" id="password" name="user_pass" required>
             </div>
             <button class="submit-btn-login" type="submit" name="login" >Đăng nhập</button>
         </form>
-    </div>
+    </fieldset>
 </body>
 
 <?php
-// Lấy thông tin đăng nhập từ người dùng
 // Kiểm tra nếu có dữ liệu submit đi
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['user_name'];
@@ -63,9 +62,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Đóng kết nối
     mysqli_close($conn);
 }
-
 ?>
 
-
+<style>
+    .form{
+        width: 500px;
+        margin: 150px auto;
+        align-items: center;
+    }
+    .login-text{
+        font-size: 16px;
+    }
+</style>
 
 </html>

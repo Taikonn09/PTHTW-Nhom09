@@ -12,7 +12,7 @@ if (isset($_GET["search"])) {
   if ($conn->connect_error) {
     die("Kết nối không thành công: " . $conn->connect_error);
   }
-  $sql = "SELECT * FROM tbl_product WHERE product_name LIKE '%$search%' OR product_description LIKE '%$search%'";
+  $sql = "SELECT * FROM tbl_product WHERE product_name LIKE '%$search%'";
   $result = $conn->query($sql);
   if ($result && $result->num_rows > 0) {
     echo "<p class='heading-search--tk container-search'>Kết quả tìm kiếm cho:". " <span>" .$search ."</span>" ."</p>";
