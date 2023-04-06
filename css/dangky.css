@@ -48,7 +48,6 @@
   padding: 10px 20px;
   border: none;
   border-radius: 3px;
-  cursor: pointer;
   font-size: 16px;
   margin: 0px;
 }
@@ -81,4 +80,58 @@ h2 {
 }
 .heading-singup-page a , .heading-login-signup a{
   color: #ff4a4a;
+}
+/*----------------------cái phần ẩn hiện thông báo mật ko trùng-------------------*/
+#signup-form{
+  position: relative;
+}
+.invalid-feedback{
+  position: absolute;
+  top: 226px;
+  right: -196px;
+  border: 1px solid lightgray;
+  background-color: lightgray;
+  padding: 5px 5px;
+}
+
+.invalid-feedback::before {
+  content: "\26A0";
+  font-size: 18px;
+  color: red;
+  margin-right: 5px;
+}
+
+#signup-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.invalid-feedback {
+  align-self: center;
+}
+.invalid-feedback::after {
+  content: "\25B2"; /* Mã Unicode của biểu tượng nón */
+  color: lightgray;
+  position: absolute;
+  top: 25px;
+  left: 6px;
+  font-size: 30px;
+  transform: rotate(180deg);
+}
+
+/*---------------nút ẩn hiện mật khẩu-----------------------*/
+#loginForm{
+  position: relative;
+}
+
+.password-field {
+  position: relative;
+}
+
+.toggle-password-1, .toggle-password-2 {
+  position: absolute;
+  top: 35%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
 }

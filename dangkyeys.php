@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (mysqli_num_rows($result_check_user) > 0) {
         // Nếu tên đăng nhập đã tồn tại, hiển thị thông báo lỗi
-        echo "<script> alert('Tên đăng nhập đã tồn tại'); </script>";
+        echo "Tên đăng nhập đã tồn tại";
     } else {
         // Nếu tên đăng nhập chưa tồn tại, thêm thông tin người dùng vào cơ sở dữ liệu
         $sql_add_user = "INSERT INTO tbl_user (user_name, user_email, user_pass, user_role) VALUES ('$username', '$useremail', '$userpass', '0')";
@@ -29,11 +29,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($result_add_user) {
             // Nếu thêm thông tin người dùng thành công, hiển thị thông báo đăng ký thành công
-            echo "<script> alert('Đăng ký thành công^^'); </script>";
+            echo "Đăng ký thành công";
             header('location: dangnhap.php');
         } else {
             // Nếu thêm thông tin người dùng thất bại, hiển thị thông báo lỗi
-            echo "<script> alert('Đăng ký thất bại'); </script>";
+            echo "Đăng ký thất bại";
         }
     }
 }
@@ -46,16 +46,16 @@ include "header.php"
 <?php
 echo "<title>Đăng ký | AIO office</title>"
 ?>
-
+<link rel="stylesheet" href="css/dangky.css">
 
 <div class="form">
     <h2>Đăng ký</h2>
-    <form id="signup-form" method="POST" action="dangky.php">
-        <label for="user_name">Tên đăng nhập:</label>
-        <input require type="text" id="user_name" name="user_name" required>
+    <form id="registerForm" method="POST" action="dangky.php">
+        <label for="regUsername">Tên đăng nhập:</label>
+        <input type="text" id="regUsername" name="regUsername" required>
 
-        <label for="user_email">Email:</label>
-        <input type="email" id="user_email" name="user_email" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
 
         <label for="regPassword">Mật khẩu:</label>
         <div class="password-field">
@@ -69,17 +69,39 @@ echo "<title>Đăng ký | AIO office</title>"
             <span class="toggle-password-2" onclick="togglePasswordVisibility()"><i class="fas fa-eye-slash"></i></span>
         </div>
         
-        <div class="invalid-feedback">Mật khẩu nhập vào không trùng khớp</div>
-
         <button class="submit-btn-singup" type="submit">Đăng ký</button>
     </form>
 
     <p class="heading-singup-page">Chọn đăng ký, bạn đã đồng ý <a href="#">Chính sách bảo mật</a> và <a href="#">Điều khoản sử dụng</a> của chúng tôi. Bạn cũng chấp nhận rằng bạn biết rằng dữ liệu của bạn sẽ được lưu trữ.</p>
 
-    <p class="heading-login-signup">Bạn đã có tài khoản? <a href="dangnhap.php">Đăng nhập</a></p>
+    <p class="heading-login-signup">Bạn đã có tài khoản? <a href="dangnhap.html">Đăng nhập</a></p>
 </div>
 
 <?php
     include "footer.php";
 ?>
+<script>
+function togglePasswordVisibility(fieldId, toggleButtonClass) {
+    const passwordField = document.getElementById(fieldId);
+    const toggleButton = document.querySelector(`.${toggleButtonClass}`);
 
+    if (passwordField.type === "password") {
+        passwordField.type = "text";
+        toggleButton.innerHTML = '<i class="fas fa-eye"></i>' ;
+    } else {
+        passwordField.type = "password";
+        toggleButton.innerHTML = '<i class="fas fa-eye-slash"></i>';
+    }
+}
+
+// call togglePasswordVisibility function for password field and toggle button 1
+document.querySelector(".toggle-password-1").addEventListener("click", function() {
+    togglePasswordVisibility("regPassword", "toggle-password-1");
+});
+
+// call togglePasswordVisibility function for password field and toggle button 2
+document.querySelector(".toggle-password-2").addEventListener("click", function() {
+    togglePasswordVisibility("confirmPassword", "toggle-password-2");
+});
+
+</script>

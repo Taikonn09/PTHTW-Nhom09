@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     } else {
         // Tài khoản đăng nhập sai
-        echo "<script>alert('Sai tài khoản hoặc mật khẩu ^^');</script>";
+        echo "Sai tài khoản hoặc mật khẩu ^^";
     }
     // Đóng kết nối
     mysqli_close($conn);
@@ -41,12 +41,30 @@ echo "<title>Đăng nhập | AIO office</title>"
 include "header.php";
 ?>
 
+<style>
+    #loginForm{
+        position: relative;
+    }
+    .password-container{
+            display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+.toggle-password{
+    position: absolute;
+    top: 117px;
+    right: 10px;
+    cursor: pointer;
+}
+    
+</style>
 <div class="form">
     <h2>Đăng nhập</h2>
-    <form id="loginForm" onsubmit="return login()" method="POST">
+    <form id="loginForm" onsubmit="return login()">
         <div>
             <label for="username">Tên đăng nhập:</label>
-            <input type="text" id="username" name="user_name" required>
+            <input type="text" id="username" name="username" required>
 
             <label for="password">Mật khẩu:</label>
             <div class="password-container">
@@ -65,10 +83,9 @@ include "header.php";
                 <a style="cursor: pointer;" onclick="future()">Bạn quên mật khẩu?</a>
             </div>
         </div>
-        <button class="submit-btn-login" type="submit" name="login">Đăng nhập</button>
+        <button class="submit-btn-login" type="submit">Đăng nhập</button>
 
-
-        <p class="sign-up-page">Bạn chưa có tài khoản? <a href="dangky.php">Đăng ký</a></p>
+        <p class="sign-up-page">Bạn chưa có tài khoản? <a href="dangky.html">Đăng ký</a></p>
     </form>
 </div>
 
@@ -78,3 +95,18 @@ include "header.php";
 <?php
     include "footer.php";
 ?>
+
+<script>
+function togglePasswordVisibility() {
+    const passwordField = document.getElementById("password");
+    const toggleButton = document.querySelector(".toggle-password");
+
+    if (passwordField.type === "password") {
+        passwordField.type = "text";
+        toggleButton.innerHTML = '<i class="fas fa-eye"></i>' ;
+    } else {
+        passwordField.type = "password";
+        toggleButton.innerHTML = '<i class="fas fa-eye-slash"></i>';
+    }
+}
+</script>

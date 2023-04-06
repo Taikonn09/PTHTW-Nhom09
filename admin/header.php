@@ -13,12 +13,12 @@
         <h1>Trang quản trị - AIO</h1>
         <nav>
             <a href="trangchu.php"><i class="fa-solid fa-house"></i> Trang chủ</a>
-            <a href="../index.html"><i class="fa-brands fa-firefox"></i> Tới trang web</a>
-            <a href="http://localhost/phpmyadmin/index.php?route=/database/structure&db=website_aio"><i class="fa-solid fa-database"></i> Tới CSDL</a>
+            <a href="../index.html"><i class="fa-brands fa-firefox" target="_blank"></i> Tới trang web</a>
+            <a href="http://localhost/phpmyadmin/index.php?route=/database/structure&db=website_aio" target="_blank"><i class="fa-solid fa-database"></i> Tới CSDL</a>
             <a href=""><i class="fa-regular fa-clipboard"></i> Đơn hàng</a>
             <a href=""><i class="fa-solid fa-money-check-dollar"></i> Doanh thu</a>
+            <a href="https://dashboard.vchat.vn/chat" target="_blank"><i class="fa-solid fa-robot"></i> Tới botchat</a>
             <a href=""><i class="fa-solid fa-user"></i> Tài khoản</a>
             <a href="index.php"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</a>
         </nav>
-
     </header>
