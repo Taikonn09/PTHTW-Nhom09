@@ -54,6 +54,4 @@
     </footer>
     <button class="top-page-btn" onclick="scrollToTop()"><i class="fa-solid fa-chevron-up top-page-icon"></i></button>
 </body>
-    <script src="js/app.js"></script>
-    <script src="js/cart.js"></script>
 </html>

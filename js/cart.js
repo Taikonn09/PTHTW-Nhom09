@@ -14,7 +14,6 @@ function addToCart() {
 }
 
 
-
 // Lấy danh sách sản phẩm
 let productList = document.querySelectorAll('.product-list .product-item');
 
@@ -84,4 +83,9 @@ increaseQuantityButton.addEventListener('click', function () {
 });
   }
   });
+});
+
+//------------------khi nhấn đặt hàng-------------------------------------
+document.querySelector('.location-pay').addEventListener('click', function() {
+  window.location.href = 'thanhtoan.html';
 });

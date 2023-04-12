@@ -89,3 +89,11 @@ td {
   background-color: #000;
   transition: all 0.3s ease-in-out;
 }
+
+/*-----------------cart trên header-----------------------*/
+.cart-page{
+  font-size: 30px;
+}
+.cart-page a{
+  color: #fff;
+}

@@ -82,4 +82,6 @@ echo "<title>Đăng ký | AIO office</title>"
 <?php
     include "footer.php";
 ?>
+<script src="js/signup-login.js"></script>
+<script src="js/cart.js"></script>
 

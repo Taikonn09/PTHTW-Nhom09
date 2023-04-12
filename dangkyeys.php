@@ -104,4 +104,6 @@ document.querySelector(".toggle-password-2").addEventListener("click", function(
     togglePasswordVisibility("confirmPassword", "toggle-password-2");
 });
 
+
+
 </script>
